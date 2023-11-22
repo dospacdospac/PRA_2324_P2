@@ -7,7 +7,7 @@
 
 
 
-int cambio(std::vector<int>& v, int size, int M){
+int cambio(std::vector<int>& v, int size, int M, std::vector<int>& res){
 	const int None = -1;
 	int T [size][M + 1];
 	
@@ -36,7 +36,7 @@ int cambio(std::vector<int>& v, int size, int M){
 
 	}
 
-	return T[v.size() - 1][M];
+	return T[size][M];
 
 }
 
@@ -44,11 +44,15 @@ int cambio(std::vector<int>& v, int size, int M){
 int main(){
 	
 	std::vector<int> v = {1, 4, 6};
+	std::vector<int> res(v.size());
 	int M = 8;
+	int result;
 
-	std::cout<< cambio(v, v.size(), M) << std::endl;
+	result = cambio(v, v.size(), M, v);
+	
+	std::cout<< result << std::endl;
 
-	return cambio(v, v.size(), M);
+	return 0;
 
 }
 
